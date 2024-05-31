@@ -1,4 +1,11 @@
 defmodule Exegete.Protocol.RESP3 do
+  @moduledoc """
+  Implementation of the newer RESP3 protocol for Redis serialization.
+
+  Note that this only really adds new types and otherwise remains backwards
+  compatible with RESP2, implementation-wise the module will fall back to RESP2
+  for any data type it does not otherwise override.
+  """
   alias Exegete.{Protocol, Protocol.RESP2}
 
   def serialize({:push, objects}) do

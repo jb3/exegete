@@ -1,4 +1,8 @@
 defmodule Exegete.Protocol.RESP2 do
+  @moduledoc """
+  Implementation of the Redis RESP2 protocol, which is the default of
+  connections until they request an upgrade through the HELLO command.
+  """
   alias Exegete.Protocol
 
   def serialize(%{} = data) do
