@@ -20,7 +20,7 @@ defmodule Exegete.MixProject do
 
   defp deps do
     [
-      {:credo, "~> 1.7", only: [:dev]}
+      {:credo, "~> 1.7", only: [:dev], runtime: false}
     ]
   end
 end
