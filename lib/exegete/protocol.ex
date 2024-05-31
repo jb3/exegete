@@ -3,7 +3,7 @@ defmodule Exegete.Protocol do
   Functions for serializing and deserializing data into Redis serialization format.
   """
 
-  alias Exegete.Protocol.Error
+  alias Exegete.Protocol.{Error, RESP2, RESP3}
 
   @type_to_byte %{
     simple_string: "+",
@@ -205,10 +205,10 @@ defmodule Exegete.Protocol do
   end
 
   def serialize(message, 2) do
-    Exegete.Protocol.RESP2.serialize(message)
+    RESP2.serialize(message)
   end
 
   def serialize(message, 3) do
-    Exegete.Protocol.RESP3.serialize(message)
+    RESP3.serialize(message)
   end
 end

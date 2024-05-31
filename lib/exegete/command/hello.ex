@@ -6,7 +6,7 @@ defmodule Exegete.Command.Hello do
   require Logger
 
   @impl true
-  def command_info() do
+  def command_info do
     %{
       name: "hello",
       arity: -1,
