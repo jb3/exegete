@@ -24,7 +24,19 @@ defmodule Exegete.Command.Command do
 
     all_commands = Exegete.Command.commands()
 
-    command_info = Enum.map(all_commands, fn {_command, mod} -> mod.command_info() end)
+    command_info =
+      Enum.map(all_commands, fn {_command, mod} ->
+        info = mod.command_info()
+
+        [
+          info.name,
+          info.arity,
+          info.flags,
+          info.first_key,
+          info.last_key,
+          info.step
+        ]
+      end)
 
     message = Protocol.serialize(command_info, state.proto_version)
 
