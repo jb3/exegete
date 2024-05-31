@@ -1,4 +1,13 @@
 defmodule Exegete.Client do
+  @moduledoc """
+  Top-level process for the management of a client connection to the database server.
+
+  After the connection is made active by `Exegete.Socket`, this module starts receiving
+  any inbound payload from clients over it's message queue.
+
+  These are parsed, where incomplete data is found buffered, and then dispatched to the
+  relevant command handler for execution of the requested command.
+  """
   use GenServer
 
   alias Exegete.{Client.State, Protocol}

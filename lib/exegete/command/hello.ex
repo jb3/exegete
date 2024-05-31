@@ -1,5 +1,6 @@
 defmodule Exegete.Command.Hello do
   @behaviour Exegete.Command
+  @moduledoc "Handshake command for upgrading/downgrading protocol and retrieving server details"
 
   alias Exegete.Protocol
 

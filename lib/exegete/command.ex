@@ -1,4 +1,6 @@
 defmodule Exegete.Command do
+  @moduledoc "Module + behaviour for dispatching command executions to lower level handlers"
+
   @doc "Handle a command execution with the provided command + args list, return the (maybe modified) state"
   @callback handle(list(), Exegete.Client.State.t()) :: Exegete.Client.State.t()
 

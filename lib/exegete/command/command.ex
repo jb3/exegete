@@ -1,5 +1,6 @@
 defmodule Exegete.Command.Command do
   @behaviour Exegete.Command
+  @moduledoc "Command for fetching metadata on commands compatible with the Exegete server."
 
   alias Exegete.Protocol
 

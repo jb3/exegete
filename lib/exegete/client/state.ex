@@ -1,4 +1,11 @@
 defmodule Exegete.Client.State do
+  @moduledoc """
+  Struct representing the state of a client connected to the Exegete server.
+
+  Some of this state is mutated thorughout the course of a connection by a client
+  executing commands on the server.
+  """
+
   defstruct [
     :socket,
     :write_buffer,
